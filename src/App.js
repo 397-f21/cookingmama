@@ -57,7 +57,11 @@ const App = () => {
       // .then((response) => console.log(response.json.stringify(recipesAPI)))
     }, []);  // useEffect((),[]) make sure that only fetch once during the first time loading the website page
   
-  if (!recipesAPI) return <h1>Loading...</h1>;
+  if (!recipesAPI) return (
+  <div className="Loading">
+    <iframe src={"https://giphy.com/embed/NLejkULLmXdgCfjkT7"} style={{width:500, height:500}}></iframe>
+  </div>
+  );
 
   return (
     <div className="container">
