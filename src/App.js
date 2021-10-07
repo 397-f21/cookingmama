@@ -83,15 +83,12 @@ const App = () => {
   
   if (!recipesAPI) return (
   <div className="Loading">
-    <iframe src={"https://giphy.com/embed/NLejkULLmXdgCfjkT7"} style={{width:500, height:500}}></iframe>
+    <iframe src={"https://giphy.com/embed/hUL5R6B4HYoXADpnvJ"} style={{width:500, height:500}}></iframe>
   </div>
   );
 
   return (
-    <div className="container" style={{ 
-      backgroundImage: `url("/background.jpg")` 
-
-    }}>
+    <div className="container">
     <Banner 
     title={ Frame.title } subTitle={ Frame.subTitle } />
     <NewRecipesButton />

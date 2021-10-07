@@ -11,7 +11,7 @@
 }
 
 .recipe-list {
-	justify-content: center;
+  justify-content: center;
   font-family: "Lucida Console", "Courier New", monospace;
   display: grid;
   font-weight: bold;
