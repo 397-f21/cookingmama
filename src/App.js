@@ -36,26 +36,38 @@ const App = () => {
   const [recipesAPI, setRecipesAPI] = useState();
   // At least four parameters required : type / q / app_id / app_key
   const type = 'public';
-  var q = 'soup';
+  var q = 'all';
   const app_id = 'f875478e';
   const app_key = 'b4b36939c6bb8d8c11b08248abf1b86d';
   const random = 'true';
-  const url = 'https://api.edamam.com/api/recipes/v2?type=' + type + '&q=' + q + '&app_id=' +
+  const initURL = 'https://api.edamam.com/api/recipes/v2?type=' + type + '&q=' + q + '&app_id=' +
    app_id + '&app_key=' + app_key + '&random' + random;
+  const [url, setUrl] = useState(initURL);
+
+  const GenerateNewRecipes = () => {
+    setUrl(recipesAPI._links.next.href);
+  }
+  
+  const NewRecipesButton = () => (
+    <button className="btn btn-outline-success btn-lg"
+        onClick={() => GenerateNewRecipes()}>
+      New Recipes
+    </button>
+  );
 
   useEffect(() => {
-      const fetchSchedule = async () => {
+      const fetchRecipes = async () => {
         const response = await fetch(url);
         if (!response.ok) throw response;
         const json = await response.json();
         setRecipesAPI(json);
       }
-      fetchSchedule();
+      fetchRecipes();
       console.log(JSON.stringify(recipesAPI));
       // fetch(url)
       // .then((response) => setRecipesAPI(response.json()))
       // .then((response) => console.log(response.json.stringify(recipesAPI)))
-    }, []);  // useEffect((),[]) make sure that only fetch once during the first time loading the website page
+    }, [url]);  // useEffect((),[]) make sure that only fetch once during the first time loading the website page
   
   if (!recipesAPI) return (
   <div className="Loading">
@@ -68,7 +80,7 @@ const App = () => {
     <Banner title={ Frame.title } subTitle={ Frame.subTitle } />
     <RecipeList recipes={ recipesAPI.hits } />
     <p></p>
-    <button className="btn btn-outline-success btn-lg"> New Recipe </button>
+    <NewRecipesButton />
   </div>
   );
 };
