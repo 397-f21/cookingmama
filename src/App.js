@@ -21,7 +21,8 @@ const Recipe = ({ recipe }) => (
   <div className="card m-1 p-2">
     <div className="card-body">
       <div className="card-imgURL"><p><img src={ recipe.image } alt={ "recipeImage" } style={{width:300, height:300}}/></p></div>
-      <div className="card-title">{ recipe.label }</div>
+      <div className ="card-title"> { recipe.label }</div>
+      <div className = "ingredient"> { recipe.ingredientLines } </div>
     </div>
   </div>
 );
@@ -49,11 +50,16 @@ const App = () => {
   }
   
   const NewRecipesButton = () => (
-    <button className="btn btn-outline-success btn-lg"
+    <div>
+       <button className="btn btn-outline-success btn-lg"
      font-family= "Gill Sans"
         onClick={() => GenerateNewRecipes()}>
       New Recipes
     </button>
+    <p></p>
+    </div>
+   
+    
   );
 
   // const getRandomInt = (max) => {
