@@ -95,7 +95,7 @@ const App = () => {
     <Banner 
     title={ Frame.title } subTitle={ Frame.subTitle } />
     <NewRecipesButton />
-    <RecipeList recipes={ recipesAPI.hits } />
+    <RecipeList recipes={ [recipesAPI.hits[0], recipesAPI.hits[1], recipesAPI.hits[3]] } />
     <p></p>
   </div>
   );
