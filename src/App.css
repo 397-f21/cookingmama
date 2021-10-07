@@ -1,12 +1,23 @@
+/* .background {
+	background-image: url("/background.jpg");
+ } */
+
 .App-Title {
   text-align: center;
   line-height: 20px;
+  font-family: "Gill Sans", sans-serif;
+  font-weight: bold;
+
 }
 
 .recipe-list {
+  font-family: "Lucida Console", "Courier New", monospace;
+  font-weight: bold;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(15rem, 25rem));
 }
+
+
 
 .card-body {
   text-align: center;
@@ -15,6 +26,7 @@
 
 .container {
   text-align: center;
+
 }
 
 .Loading {

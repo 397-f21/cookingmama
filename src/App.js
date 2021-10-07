@@ -5,7 +5,7 @@ import './App.css';
 
 const Frame = {
   title: "Cooking MaMa ",
-  subTitle: "Cooking MaMa is to the rescue, helping you eat fantastic meals! "
+  subTitle: "Have no idea of what to cook? Check out the recipes! "
 };
 
 const Banner = ({title, subTitle}) => (
@@ -28,7 +28,7 @@ const Recipe = ({ recipe }) => (
 
 const RecipeList = ({ recipes }) => (
   <div className="recipe-list">
-    { Object.values(recipes).map(recipe => <Recipe key={ recipe.recipe.label } recipe={ recipe.recipe } />) }
+    { Object.values(recipes).map(recipe => <Recipe className = "recipe" key={ recipe.recipe.label } recipe={ recipe.recipe } />) }
   </div>
 );
 
@@ -36,7 +36,7 @@ const App = () => {
   const [recipesAPI, setRecipesAPI] = useState();
   // At least four parameters required : type / q / app_id / app_key
   const type = 'public';
-  var q = 'all';
+  var q = 'vegan';
   const app_id = 'f875478e';
   const app_key = 'b4b36939c6bb8d8c11b08248abf1b86d';
   const random = 'true';
@@ -50,10 +50,16 @@ const App = () => {
   
   const NewRecipesButton = () => (
     <button className="btn btn-outline-success btn-lg"
+     font-family= "Gill Sans"
         onClick={() => GenerateNewRecipes()}>
       New Recipes
     </button>
   );
+
+  // const getRandomInt = (max) => {
+  //   return Math.floor(Math.random() * max);
+  // }
+ 
 
   useEffect(() => {
       const fetchRecipes = async () => {
@@ -76,11 +82,15 @@ const App = () => {
   );
 
   return (
-    <div className="container">
-    <Banner title={ Frame.title } subTitle={ Frame.subTitle } />
+    <div className="container" style={{ 
+      backgroundImage: `url("/background.jpg")` 
+
+    }}>
+    <Banner 
+    title={ Frame.title } subTitle={ Frame.subTitle } />
+    <NewRecipesButton />
     <RecipeList recipes={ recipesAPI.hits } />
     <p></p>
-    <NewRecipesButton />
   </div>
   );
 };
