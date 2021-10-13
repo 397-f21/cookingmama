@@ -1,24 +1,45 @@
+/* .background {
+	background-image: url("/background.jpg");
+ } */
+
 .App-Title {
   text-align: center;
   line-height: 20px;
+  font-family: "Gill Sans", sans-serif;
+  font-weight: bold;
+  margin-bottom: 20px;
+
 }
 
 .recipe-list {
+	justify-content: center;
+  font-family: "Lucida Console", "Courier New", monospace;
   display: grid;
+  font-weight: bold;
   grid-template-columns: repeat(auto-fill, minmax(15rem, 25rem));
 }
+
 
 .card-body {
   text-align: center;
   line-height: 20px;
 }
 
+.ingredient {
+	border:solid 1px grey;
+	padding: 10px;
+  margin-top: 10px;
+	font-weight: 500;
+
+}
+
 .container {
   text-align: center;
+
 }
 
 .Loading {
-	text-align: center; 
+	text-align: center;
 	background-color: #fff;
 	border-radius: 20px;
 	margin: auto;
