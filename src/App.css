@@ -7,6 +7,7 @@
   line-height: 20px;
   font-family: "Gill Sans", sans-serif;
   font-weight: bold;
+  margin-bottom: 20px;
 
 }
 
@@ -27,7 +28,9 @@
 .ingredient {
 	border:solid 1px grey;
 	padding: 10px;
+  margin-top: 10px;
 	font-weight: 500;
+
 }
 
 .container {
@@ -36,7 +39,7 @@
 }
 
 .Loading {
-	text-align: center; 
+	text-align: center;
 	background-color: #fff;
 	border-radius: 20px;
 	margin: auto;
