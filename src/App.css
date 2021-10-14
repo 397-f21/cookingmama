@@ -35,6 +35,14 @@
 
 .container {
   text-align: center;
+  /* Full height */
+  height: 200%;
+  /* Center and scale the image nicely */
+  background-color: grey;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
 
 }
 
@@ -47,4 +55,8 @@
 	left: 50%;
 	top: 50%;
 	transform: translate(-50%,-50%);
+}
+
+.btn{
+  margin-top: 20px;
 }

@@ -43,9 +43,18 @@ const App = () => {
   const [recipesAPI, setRecipesAPI] = useState();
   // At least four parameters required : type / q / app_id / app_key
   const type = 'public';
+  // var q = 'lunch'
+
   if (query == undefined) {
+  var q = 'lunch';
+  }
+  if (query === ''){
+    var q = 'lunch'
+  }
+  if (query == null) {
     var q = 'lunch';
   }
+
   else {
     var q = query;
   }
@@ -70,8 +79,6 @@ const App = () => {
     </button>
     <p></p>
     </div>
-
-
   );
 
   useEffect(() => {
@@ -96,11 +103,10 @@ const App = () => {
 
   return (
     <div className="container" style={{
-      backgroundImage: `url("/background.jpg")`
-
-    }}>
+    backgroundImage: `url("/background.jpg")`}}>
     <Banner
     title={ Frame.title } subTitle={ Frame.subTitle } />
+    <i> searching for { q } recipes</i>
     <NewRecipesButton />
     <RecipeList recipes={ [recipesAPI.hits[0], recipesAPI.hits[1], recipesAPI.hits[2]] } />
     <p></p>
