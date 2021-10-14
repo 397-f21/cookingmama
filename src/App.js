@@ -48,17 +48,6 @@ const App = () => {
   if (query) {
    q = query;
   }
-  // if (query === ''){
-  //   var q = 'lunch'
-  // }
-  // if (query == null) {
-  //   var q = 'lunch';
-  // }
-  //
-  // else {
-  //   var q = query;
-  //   console.log('inelse')
-  // }
 
   console.log(q)
 
