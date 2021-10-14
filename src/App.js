@@ -43,21 +43,13 @@ const App = () => {
   const [recipesAPI, setRecipesAPI] = useState();
   // At least four parameters required : type / q / app_id / app_key
   const type = 'public';
-  // var q = 'lunch'
+  var q = 'lunch'
 
-  if (query == undefined) {
-  var q = 'lunch';
-  }
-  if (query === ''){
-    var q = 'lunch'
-  }
-  if (query == null) {
-    var q = 'lunch';
+  if (query) {
+   q = query;
   }
 
-  else {
-    var q = query;
-  }
+  console.log(q)
 
   const app_id = 'f875478e';
   const app_key = 'b4b36939c6bb8d8c11b08248abf1b86d';
