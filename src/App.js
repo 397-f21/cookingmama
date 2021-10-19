@@ -5,8 +5,8 @@ import { useState, useEffect } from 'react';
 import './App.css';
 
 const Frame = {
-  title: "Cooking MaMa ",
-  subTitle: "Have no idea of what to cook? Check out the recipes! "
+  title: "Cooking Mama ",
+  subTitle: "Don't know what to cook? Check out these recipes! "
 
 };
 
@@ -61,6 +61,10 @@ const App = () => {
     setUrl(recipesAPI._links.next.href);
   }
 
+  const QueryDisplay = () => (
+    <div>{query}</div>
+  )
+
   const NewRecipesButton = () => (
     <div>
        <button className="btn btn-outline-success btn-lg"
@@ -70,8 +74,6 @@ const App = () => {
     </button>
     <p></p>
     </div>
-
-
   );
 
   useEffect(() => {
