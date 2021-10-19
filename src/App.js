@@ -37,12 +37,21 @@ const App = () => {
   // At least four parameters required : type / q / app_id / app_key
   const type = 'public';
   var q = 'all';
-  const app_id = 'f875478e';
-  const app_key = 'b4b36939c6bb8d8c11b08248abf1b86d';
+  
+  // ATTENTION: THIS PART IS CHANGED
+  const app_id = ['f875478e', '96af15a9', 'c9c3c842', '4b2c6c9d', '294392e6', '0ab90297', 'a7a98cbd'];
+  const app_key = ['b4b36939c6bb8d8c11b08248abf1b86d', '7d96b52be4a87a2af432bb5d6864a122', 'da15eb466ac79f87f04215cb4cc683ee', 
+    '59a819eb45421e238d1748a36fc801bd', '4311fdb568cc21f262f1827a35c4a0b6', '5b960286141cb43a1a702db7ac425aa7', 'fbc8f51b141cfd4063d33b3744a5de81'];
+
   const random = 'true';
+  
+  // ATTENTION: THIS PART IS CHANGED
+  var i = Math.round(Math.random() * (app_id.length-1));
   const initURL = 'https://api.edamam.com/api/recipes/v2?type=' + type + '&q=' + q + '&app_id=' +
-   app_id + '&app_key=' + app_key + '&random' + random;
+  app_id[i] + '&app_key=' + app_key[i] + '&random' + random;
+
   const [url, setUrl] = useState(initURL);
+
 
   const GenerateNewRecipes = () => {
     setUrl(recipesAPI._links.next.href);
@@ -64,6 +73,10 @@ const App = () => {
       }
       fetchRecipes();
       console.log(JSON.stringify(recipesAPI));
+      // ATTENTION: THIS PART IS CHANGED
+      console.log(i);
+      console.log(app_id[i]);
+      console.log(app_key[i]);
       // fetch(url)
       // .then((response) => setRecipesAPI(response.json()))
       // .then((response) => console.log(response.json.stringify(recipesAPI)))
