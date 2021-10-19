@@ -91,10 +91,9 @@ const App = () => {
 
   if (!recipesAPI) return (
   <div className="Loading">
-    <iframe src={"https://giphy.com/embed/NLejkULLmXdgCfjkT7"} style={{width:500, height:500}}></iframe>
+    <iframe title={"loading"} src={"https://giphy.com/embed/NLejkULLmXdgCfjkT7"} style={{width:500, height:500}}></iframe>
   </div>
   );
-  console.log(recipesAPI.hits[0].recipe.ingredientLines)
   return (
     <div className="container" style={{
     backgroundImage: `url("/background.jpg")`}}>
