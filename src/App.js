@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 import './App.css';
 
 const Frame = {
-  title: "Cooking MaMa ",
+  title: "Cooking Mama ",
   subTitle: "Have no idea of what to cook? Check out the recipes! "
 
 };
@@ -67,7 +67,7 @@ const App = () => {
        <button className="btn btn-outline-success btn-lg"
      font-family= "Gill Sans"
         onClick={() => GenerateNewRecipes()}>
-      New Recipes
+      More Recipes
     </button>
     <p></p>
     </div>
