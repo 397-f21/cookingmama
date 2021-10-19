@@ -6,7 +6,7 @@ const SearchBar = () => (
         <input
             type="text"
             id="header-search"
-            placeholder="ex: lunch, vegan, etc."
+            placeholder="ex: lunch, vegan, vegan lunch"
             name="s"
             autocomplete="off"
         />
