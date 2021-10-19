@@ -6,10 +6,10 @@ const SearchBar = () => (
         <input
             type="text"
             id="header-search"
-            placeholder="search"
+            placeholder="ex: lunch, vegan, etc."
             name="s"
         />
-        <button type="submit">update preferences</button>
+        <button type="submit">search</button>
     </form>
 );
 
