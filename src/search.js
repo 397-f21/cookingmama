@@ -8,6 +8,7 @@ const SearchBar = () => (
             id="header-search"
             placeholder="ex: lunch, vegan, etc."
             name="s"
+            autocomplete="off"
         />
         <button type="submit">search</button>
     </form>
