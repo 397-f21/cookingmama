@@ -55,10 +55,16 @@ const App = () => {
 
   const app_id = 'f875478e';
   const app_key = 'b4b36939c6bb8d8c11b08248abf1b86d';
+
   const random = 'true';
+  
+  // ATTENTION: THIS PART IS CHANGED
+  var i = Math.round(Math.random() * (app_id.length-1));
   const initURL = 'https://api.edamam.com/api/recipes/v2?type=' + type + '&q=' + q + '&app_id=' +
-   app_id + '&app_key=' + app_key + '&random' + random;
+  app_id[i] + '&app_key=' + app_key[i] + '&random' + random;
+
   const [url, setUrl] = useState(initURL);
+
 
   const GenerateNewRecipes = () => {
     setUrl(recipesAPI._links.next.href);
@@ -84,6 +90,10 @@ const App = () => {
       }
       fetchRecipes();
       console.log(JSON.stringify(recipesAPI));
+      // ATTENTION: THIS PART IS CHANGED
+      console.log(i);
+      console.log(app_id[i]);
+      console.log(app_key[i]);
       // fetch(url)
       // .then((response) => setRecipesAPI(response.json()))
       // .then((response) => console.log(response.json.stringify(recipesAPI)))
