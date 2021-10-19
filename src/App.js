@@ -25,7 +25,9 @@ const Recipe = ({ recipe }) => (
     <div className="card-body">
       <div className="card-imgURL"><p><img src={ recipe.image } alt={ "recipeImage" } style={{width:300, height:300}}/></p></div>
       <a href= {recipe.url}> { recipe.label }</a>
-      <div className = "ingredient"> { recipe.ingredientLines } </div>
+      <ul className = "ingredient"> 
+      { recipe.ingredientLines.map((e) => (<li>{e}</li>)) } 
+      </ul>
     </div>
   </div>
 );
@@ -92,7 +94,7 @@ const App = () => {
     <iframe src={"https://giphy.com/embed/NLejkULLmXdgCfjkT7"} style={{width:500, height:500}}></iframe>
   </div>
   );
-
+  console.log(recipesAPI.hits[0].recipe.ingredientLines)
   return (
     <div className="container" style={{
     backgroundImage: `url("/background.jpg")`}}>
